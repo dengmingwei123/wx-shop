@@ -1,0 +1,42 @@
+.collect .collect_main .collect_title {
+  display: flex;
+  padding: 20rpx;
+}
+.collect .collect_main .collect_title .collect_tips {
+  padding: 10rpx;
+  border: 1rpx solid #ccc;
+  margin-right: 20rpx;
+}
+.collect .collect_main .collect_title .collect_tips.active {
+  color: var(--themeColor);
+  border: 1rpx solid currentColor;
+}
+.collect .collect_main .collect_content .collect_item {
+  display: flex;
+  border-bottom: 2rpx solid #ccc;
+}
+.collect .collect_main .collect_content .collect_item .collect_img_wrap {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+.collect .collect_main .collect_content .collect_item .collect_img_wrap image {
+  width: 70%;
+}
+.collect .collect_main .collect_content .collect_item .collect_info_wrap {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.collect .collect_main .collect_content .collect_item .collect_info_wrap .collect_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.collect .collect_main .collect_content .collect_item .collect_info_wrap .collect_price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}

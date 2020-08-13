@@ -1,0 +1,4 @@
+<view class="up-img">
+  <image src="{{ src }}"></image>
+  <icon type="clear" color="#eb4450" size="20" bindtap="closeImg"></icon>
+</view>

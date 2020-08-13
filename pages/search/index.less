@@ -1,0 +1,62 @@
+page {
+  background-color:#edece8;
+}
+// 搜索框
+.search {
+  padding:20rpx;
+  .search_bar {
+    background-color:#fff;
+    display:flex;
+    height:60rpx;
+    .search_text {
+      flex:1;
+      display:flex;
+      align-items:center;
+      border-radius:5rpx;
+      padding-left:10rpx;
+      
+      color:#666;
+      .input {
+        width:100%;
+        height:100%;
+      }
+    }
+    .search_interval {
+      flex:0 0 20rpx;
+      background-color:#edece8;
+    }
+    .search_btn {
+      flex:0 0 100rpx;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26rpx;
+      color:#666;
+      border-radius:10rpx;
+
+      .btn_confirm {
+
+      }
+      .btn_cancel {
+
+      }
+    }
+  }
+  // 搜索结果
+  .search_list {
+    margin:20rpx 0;
+    border-radius:10rpx;
+    background-color:#fff;
+    .search_item {
+      width:100%;
+      height:70rpx;
+      line-height:70rpx;
+      padding-left:10rpx;
+      border-bottom:2rpx solid #ccc;
+      display:-webkit-box;
+      overflow:hidden;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:1;
+    }
+  }
+}

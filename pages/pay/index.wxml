@@ -1,0 +1,52 @@
+<scroll-view scroll-y class="cart">
+  <!-- 收货地址开始 -->
+  <view class="cart_address">
+    <!-- 详细地址 -->
+    <view class="detail_address_row">
+      <view class="address_info">
+        <view class="address_info_name">{{ address.userName }}</view>
+        <view class="address_info_text">{{ address.all }}</view>
+      </view>
+      <view class="address_phone">{{ address.telNumber }}</view>
+    </view>
+  </view>
+  <!-- 收获地址结束 -->
+  <!-- 购物车内容开始 -->
+  <view class="cart_container">
+    <view class="cart_title">购物车</view>
+    <view class="cart_content">
+        <view class="cart_content_item" wx:for="{{ cart }}" wx:key="goods_id">
+        <!-- 商品图片 -->
+        <navigator class='cart_img_wrap'>
+          <image mode="widthFix" src="{{ item.pics[0].pics_sma?item.pics[0].pics_sma:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg' }}"></image>
+        </navigator>
+        <!-- 详细信息 -->
+      <view class="item_detail">
+        <view class="item_detail_name">{{ item.goods_name }}</view>
+          <view class="item_detail_btm">
+            <view class="detail_price">￥{{ item.goods_price }}</view>
+              <view class="detail_btn">
+                <view class='text'>X {{ item.num }}</view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 购物车内容结束 -->
+</scroll-view>
+
+<!-- 底部工具栏开始 -->
+  <view class="cart_footer_tool">
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+      <view class="total">合计:</view>
+      <view class="price_box">
+        <view class="price">￥{{ totalPrice }}</view>
+        <view class="text">包含运费</view>
+      </view>
+    </view>
+    <!-- 结算 -->
+    <view class="order_pay_wrap">支付({{ totalNum }})</view>
+  </view>
+  <!-- 底部工具栏结束 -->

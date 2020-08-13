@@ -1,0 +1,40 @@
+.index .index_swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index .index_swiper swiper image {
+  width: 100%;
+}
+.index .index_categories {
+  display: flex;
+}
+.index .index_categories navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+.index .index_categories navigator image {
+  width: 100%;
+}
+.index .index_floor .floor_list .list_title {
+  padding: 10rpx 0;
+}
+.index .index_floor .floor_list .list_title image {
+  width: 100%;
+}
+.index .index_floor .floor_list .list_box navigator {
+  box-sizing: border-box;
+  width: 33.33%;
+  float: left;
+}
+.index .index_floor .floor_list .list_box navigator:nth-last-child(-n + 4) {
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.index .index_floor .floor_list .list_box navigator:nth-child(2),
+.index .index_floor .floor_list .list_box navigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.index .index_floor .floor_list .list_box navigator image {
+  width: 100%;
+  height: 100%;
+}

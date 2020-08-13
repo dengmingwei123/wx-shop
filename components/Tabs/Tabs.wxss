@@ -1,0 +1,15 @@
+.tabs .tabs_title {
+  height: 80rpx;
+  display: flex;
+}
+.tabs .tabs_title .title_item {
+  flex: 1;
+  line-height: 80rpx;
+  text-align: center;
+  color: #999;
+  border-bottom: 4rpx solid #999;
+}
+.tabs .tabs_title .title_item.active {
+  color: var(--themeColor);
+  border-bottom: 4rpx solid var(--themeColor);
+}

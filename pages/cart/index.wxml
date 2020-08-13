@@ -1,0 +1,79 @@
+<scroll-view scroll-y class="cart">
+  <!-- 收货地址开始 -->
+  <view class="cart_address">
+    <!-- 获取地址按钮 -->
+    <view class="address_btn" wx:if="{{ !address.userName }}">
+      <button type="primary" plain bindtap="getAddress">获取收获地址</button>
+    </view>
+    <!-- 详细地址 -->
+    <view class="detail_address_row">
+      <view class="address_info">
+        <view class="address_info_name">{{ address.userName }}</view>
+        <view class="address_info_text">{{ address.all }}</view>
+      </view>
+      <view class="address_phone">{{ address.telNumber }}</view>
+    </view>
+  </view>
+  <!-- 收获地址结束 -->
+  <!-- 购物车内容开始 -->
+  <view class="cart_container">
+    <view class="cart_title">购物车</view>
+    <view class="cart_content">
+      <block wx:if="{{ cart.length>0 }}">
+        <view class="cart_content_item" wx:for="{{ cart }}" wx:key="goods_id">
+        <!-- 复选框 -->
+        <view class="cart_chk_wrap">
+          <checkbox-group bindchange="handleChecked"
+           data-index="{{ index }}">
+            <checkbox color="#eb4450" checked="{{ item.checked }}" ></checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 商品图片 -->
+        <navigator class='cart_img_wrap'>
+          <image mode="widthFix" src="{{ item.pics[0].pics_sma?item.pics[0].pics_sma:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg' }}"></image>
+        </navigator>
+        <!-- 详细信息 -->
+        <view class="item_detail">
+          <view class="item_detail_name">{{ item.goods_name }}</view>
+          <view class="item_detail_btm">
+            <view class="detail_price">￥{{ item.goods_price }}</view>
+              <view class="detail_btn">
+                <view class='btn' bindtap="handleCount" data-count="-1" data-index="{{ index }}">-</view>
+                <view class='text'>{{ item.num }}</view>
+                <view class='btn' bindtap="handleCount" data-count="1" data-index="{{ index }}">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="emptyCart">
+          <image  src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596973975794&di=e6740d1f82323585d2cea33082bc44d4&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 购物车内容结束 -->
+</scroll-view>
+
+<!-- 底部工具栏开始 -->
+  <view class="cart_footer_tool">
+    <!-- 全选 -->
+    <view class="all_chk_wrap">
+      <checkbox-group bindchange="handleAllChecked">
+        <checkbox color="#eb4450" checked="{{ allChecked }}"></checkbox>
+      </checkbox-group>
+      <view class="chk_text">全选</view>
+    </view>
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+      <view class="total">合计:</view>
+      <view class="price_box">
+        <view class="price">￥{{ totalPrice }}</view>
+        <view class="text">包含运费</view>
+      </view>
+    </view>
+    <!-- 结算 -->
+    <view class="order_pay_wrap" bindtap="handlePay">结算({{ totalNum }})</view>
+  </view>
+  <!-- 底部工具栏结束 -->
